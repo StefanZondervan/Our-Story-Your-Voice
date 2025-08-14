@@ -1,0 +1,269 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body, html {
+  height: 100%;
+  font-family: "Labrada", serif;
+  background-color: #fef0da;
+  color: #fef0da; /* Changed to white */
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Video Styles */
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Video Overlay Styles */
+#video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Darkened: Changed from 0.4 to 0.6 */
+  z-index: 0;
+}
+
+/* Header */
+header {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  color: #fef0da; /* Changed to white */
+  line-height: 1.6;
+  font-style: italic;
+  user-select: text;
+  z-index: 2;
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Main title */
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fef0da; /* Changed to white */
+  letter-spacing: 1.2px;
+}
+
+/* Intro paragraph */
+.hero p.intro {
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: #fef0da; /* Changed to white */
+  line-height: 1.6;
+  font-style: italic;
+  user-select: text;
+}
+
+/* Call to action button */
+.cta-button {
+  background-color: #ef4034; /* Keep button background this color */
+  color: black; /* Ensure button text is white */
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+  margin-top: 0;
+}
+
+.cta-button:hover {
+  background-color: #ef4034; /* Keep hover background this color */
+  color: #fef0da; /* Keep hover text light */
+}
+
+/* Heritage Steps Section - If present and you want it white as well */
+.heritage-steps {
+  /* ... existing styles ... */
+  z-index: 2;
+}
+
+.step-icon p {
+  color: #fef0da; /* Changed to white if you want future step text white */
+}
+
+/* Arrow Styles (if you want the arrows white too) */
+.step-icon:not(:last-child)::after {
+  color: #fef0da; /* Changed to white */
+}
+
+
+/* Responsive Styles (Media Queries) */
+
+/* Mobile-Specific Styles (e.g., for screens smaller than 768px) */
+@media (max-width: 768px) {
+  header {
+    font-size: 0.95rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p.intro {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+}
+
+/* Specific adjustments for 480px width phone (and smaller) */
+@media (max-width: 480px) {
+  header {
+    font-size: 0.6rem;
+    top: 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero p.intro {
+    font-size: 0.65rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .cta-button {
+    font-size: 0.7rem;
+    padding: 5px 15px;
+  }
+}
+
+
+
+/* --- New Styles for Pop-up Modal --- */
+
+/* The backdrop that covers the whole screen */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Class to hide the modal */
+.modal-backdrop.hidden {
+  opacity: 0;
+  pointer-events: none; /* Allows clicks to pass through when hidden */
+}
+
+/* The modal box itself */
+.text-modal {
+  background-color: rgba(254, 240, 218, 0.9); /* A slightly transparent version of your body background color */
+  color: black;
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 800px;
+  max-height: 90vh; /* Limits the height to prevent it from taking up the full screen */
+  overflow-y: auto;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  line-height: 1.6;
+}
+
+.text-modal h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #ef4034;
+  text-align: center;
+}
+
+.text-modal h3 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ef4034;
+}
+
+.text-modal p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.text-modal strong {
+  color: #ef4034; /* You can change this color to something else if you prefer */
+  font-weight: 700;
+}
+
+.text-modal .cta-button {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto;
+  padding: 12px 30px;
+}
+
+.text-modal .contact-email {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* Responsive styles for modal on smaller screens */
+@media (max-width: 768px) {
+  .text-modal {
+    padding: 25px;
+    max-width: 95%;
+  }
+
+  .text-modal h2 {
+    font-size: 1.5rem;
+  }
+}
